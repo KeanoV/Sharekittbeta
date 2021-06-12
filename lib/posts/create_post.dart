@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/components/custom_image.dart';
-import 'package:social_media_app/models/user.dart';
-import 'package:social_media_app/utils/firebase.dart';
-import 'package:social_media_app/view_models/auth/posts_view_model.dart';
-import 'package:social_media_app/widgets/indicators.dart';
+import 'package:sharekitterbeta/components/custom_image.dart';
+import 'package:sharekitterbeta/models/user.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
+import 'package:sharekitterbeta/view_models/auth/posts_view_model.dart';
+import 'package:sharekitterbeta/widgets/indicators.dart';
 
 class CreatePost extends StatefulWidget {
   @override
@@ -41,7 +41,7 @@ class _CreatePostState extends State<CreatePost> {
                 Navigator.pop(context);
               },
             ),
-            title: Text('FlutterSocial'.toUpperCase()),
+            title: Text('Social'.toUpperCase()),
             centerTitle: true,
             actions: [
               GestureDetector(

@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "780820743732",
-    "firebase_url": "https://social-app-e1319.firebaseio.com",
-    "project_id": "social-app-e1319",
-    "storage_bucket": "social-app-e1319.appspot.com"
+    "project_number": "382523971327",
+    "firebase_url": "https://project-sharekitbeta6-default-rtdb.firebaseio.com",
+    "project_id": "project-sharekitbeta6",
+    "storage_bucket": "project-sharekitbeta6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:780820743732:android:c9bda4d1d3f2298c88ec61",
+        "mobilesdk_app_id": "1:382523971327:android:465b6c9a62f2691e539eca",
         "android_client_info": {
-          "package_name": "com.example.social_media_app"
+          "package_name": "com.example.sharekitterbeta"
         }
       },
       "oauth_client": [
         {
-          "client_id": "780820743732-h8kvhuspqptk47fvvjih14m7qe4co2sh.apps.googleusercontent.com",
+          "client_id": "382523971327-vih2amdobilfinrq39d2r593v0fpbnsp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.social_media_app",
-            "certificate_hash": "00a293a4d4d2c32595bb76f673fbfbda65edb065"
+            "package_name": "com.example.sharekitterbeta",
+            "certificate_hash": "62e1299e85b70aec13d978cbc36e1feffb46fb6d"
           }
         },
         {
-          "client_id": "780820743732-m8a5s06sg56rj69hb1bduk7k1ihd6n3h.apps.googleusercontent.com",
+          "client_id": "382523971327-1gbd248fi8p93heq0ofvkp8eturi3n9h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA_0yQRvZDLcQ-78TMjA8I1JNSH0JsHNMw"
+          "current_key": "AIzaSyCyWeSwZYCXLRP3DEEtfzS01gdBmyYt6XE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "780820743732-m8a5s06sg56rj69hb1bduk7k1ihd6n3h.apps.googleusercontent.com",
+              "client_id": "382523971327-1gbd248fi8p93heq0ofvkp8eturi3n9h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

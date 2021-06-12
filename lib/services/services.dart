@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:social_media_app/utils/file_utils.dart';
-import 'package:social_media_app/utils/firebase.dart';
+import 'package:sharekitterbeta/utils/file_utils.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
 
 abstract class Service {
   Future<String> uploadImage(Reference ref, File file) async {

@@ -1,4 +1,4 @@
-package com.example.social_media_app
+package com.example.sharekitterbeta
 
 import io.flutter.embedding.android.FlutterActivity
 

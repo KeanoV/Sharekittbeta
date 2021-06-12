@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sharekitterbeta/blog/create_blog_page.dart';
 import '../posts/create_post.dart';
 //import 'file:///C:/Users/success/social_media_app/lib/posts/create_post.dart';
 
@@ -89,6 +90,19 @@ class FabContainer extends StatelessWidget {
 
                   Navigator.of(context)
                       .push(CupertinoPageRoute(builder: (_) => CreatePost()));
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  CupertinoIcons.pen,
+                  size: 25.0,
+                ),
+                title: Text('Add Your Blog'),
+                onTap: () {
+                  Navigator.pop(context);
+
+                  Navigator.of(context).push(
+                      CupertinoPageRoute(builder: (_) => CreateBlogPage()));
                 },
               ),
             ],

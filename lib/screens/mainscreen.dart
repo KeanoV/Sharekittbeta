@@ -2,12 +2,12 @@ import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:social_media_app/components/fab_container.dart';
-import 'package:social_media_app/pages/notification.dart';
-import 'package:social_media_app/pages/profile.dart';
-import 'package:social_media_app/pages/search.dart';
-import 'package:social_media_app/pages/feeds.dart';
-import 'package:social_media_app/utils/firebase.dart';
+import 'package:sharekitterbeta/components/fab_container.dart';
+import 'package:sharekitterbeta/pages/profile.dart';
+import 'package:sharekitterbeta/pages/feeds.dart';
+import 'package:sharekitterbeta/screens/SharedFiles.dart';
+import 'package:sharekitterbeta/store/book.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
 
 class TabScreen extends StatefulWidget {
   @override
@@ -26,8 +26,8 @@ class _TabScreenState extends State<TabScreen> {
     },
     {
       'title': 'Search',
-      'icon': CupertinoIcons.search,
-      'page': Search(),
+      'icon': CupertinoIcons.upload_circle,
+      'page': UploadDoc(),
       'index': 1,
     },
     {
@@ -37,9 +37,9 @@ class _TabScreenState extends State<TabScreen> {
       'index': 2,
     },
     {
-      'title': 'Notification',
-      'icon': CupertinoIcons.bell_solid,
-      'page': Activities(),
+      'title': 'Book Store',
+      'icon': CupertinoIcons.book_circle_fill,
+      'page': Book(),
       'index': 3,
     },
     {

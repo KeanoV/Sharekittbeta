@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/components/custom_image.dart';
-import 'package:social_media_app/view_models/auth/posts_view_model.dart';
-import 'package:social_media_app/widgets/indicators.dart';
+import 'package:sharekitterbeta/components/custom_image.dart';
+import 'package:sharekitterbeta/view_models/auth/posts_view_model.dart';
+import 'package:sharekitterbeta/widgets/indicators.dart';
 
 class ProfilePicture extends StatefulWidget {
   @override
@@ -55,11 +55,10 @@ class _ProfilePictureState extends State<ProfilePicture> {
                         )
                       : viewModel.mediaUrl == null
                           ? Center(
-                              child: Text(
-                                'upload your profile picture',
-                                style: TextStyle(
-                                  color: Theme.of(context).accentColor,
-                                ),
+                              child: Icon(
+                                Icons.upload_file_sharp,
+                                size: 80,
+                                color: Theme.of(context).accentColor,
                               ),
                             )
                           : Image.file(

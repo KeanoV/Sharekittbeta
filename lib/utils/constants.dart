@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Constants {
   //App related strings
-  static String appName = "Social App";
+  static String appName = "ShareKitt";
 
   //Colors for theme
   static Color lightPrimary = Color(0xfff3f4f9);
@@ -38,7 +38,6 @@ class Constants {
         ),
       ),
     ),
-     
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -49,7 +48,7 @@ class Constants {
     accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
     cursorColor: darkAccent,
-     bottomAppBarTheme: BottomAppBarTheme(
+    bottomAppBarTheme: BottomAppBarTheme(
       elevation: 0,
       color: darkBG,
     ),
@@ -86,24 +85,24 @@ class ThemeNotifier extends ChangeNotifier {
     _darkTheme = true;
     _loadfromPrefs();
   }
-  toggleTheme(){
+  toggleTheme() {
     _darkTheme = !_darkTheme;
     _saveToPrefs();
     notifyListeners();
   }
 
-  _initPrefs()async{
-    if(_prefs == null)
-      _prefs = await SharedPreferences.getInstance();
+  _initPrefs() async {
+    if (_prefs == null) _prefs = await SharedPreferences.getInstance();
   }
-  _loadfromPrefs()async{
+
+  _loadfromPrefs() async {
     await _initPrefs();
     _darkTheme = _prefs.getBool(key) ?? true;
     notifyListeners();
   }
-  _saveToPrefs()async{
+
+  _saveToPrefs() async {
     await _initPrefs();
     _prefs.setBool(key, _darkTheme);
   }
 }
-

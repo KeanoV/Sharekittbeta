@@ -3,15 +3,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_icons/flutter_icons.dart';
-import 'package:social_media_app/components/custom_card.dart';
-import 'package:social_media_app/components/custom_image.dart';
-import 'package:social_media_app/models/post.dart';
-import 'package:social_media_app/models/user.dart';
-import 'package:social_media_app/pages/profile.dart';
-import 'package:social_media_app/screens/comment.dart';
-import 'package:social_media_app/screens/view_image.dart';
-import 'package:social_media_app/utils/firebase.dart';
+import 'package:sharekitterbeta/components/custom_card.dart';
+import 'package:sharekitterbeta/components/custom_image.dart';
+import 'package:sharekitterbeta/models/post.dart';
+import 'package:sharekitterbeta/models/user.dart';
+import 'package:sharekitterbeta/pages/profile.dart';
+import 'package:sharekitterbeta/screens/comment.dart';
+import 'package:sharekitterbeta/screens/view_image.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class UserPost extends StatelessWidget {
@@ -332,7 +331,7 @@ class UserPost extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              '${post.location == null ? 'Wooble' : post.location}',
+                              '${post.location == null ? 'At Home' : post.location}',
                               style: TextStyle(
                                 fontSize: 10.0,
                                 color: Color(0xff4D4D4D),

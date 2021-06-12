@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/components/chat_bubble.dart';
-import 'package:social_media_app/models/enum/message_type.dart';
-import 'package:social_media_app/models/message.dart';
-import 'package:social_media_app/models/user.dart';
-import 'package:social_media_app/utils/firebase.dart';
-import 'package:social_media_app/view_models/conversation/conversation_view_model.dart';
-import 'package:social_media_app/view_models/user/user_view_model.dart';
-import 'package:social_media_app/widgets/indicators.dart';
+import 'package:sharekitterbeta/components/chat_bubble.dart';
+import 'package:sharekitterbeta/models/enum/message_type.dart';
+import 'package:sharekitterbeta/models/message.dart';
+import 'package:sharekitterbeta/models/user.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
+import 'package:sharekitterbeta/view_models/conversation/conversation_view_model.dart';
+import 'package:sharekitterbeta/view_models/user/user_view_model.dart';
+import 'package:sharekitterbeta/widgets/indicators.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class Conversation extends StatefulWidget {
@@ -56,8 +56,8 @@ class _ConversationState extends State<Conversation> {
     UserViewModel viewModel = Provider.of<UserViewModel>(context);
     viewModel.setUser();
     var user = Provider.of<UserViewModel>(context, listen: true).user;
-    Provider.of<ConversationViewModel>(context, listen: false)
-        .setUserTyping(widget.chatId, user, typing);
+    Provider.of<ConversationViewModel>(context, listen: false);
+    // .setUserTyping(widget.chatId, user, typing);
   }
 
   @override
@@ -90,10 +90,10 @@ class _ConversationState extends State<Conversation> {
                 child: StreamBuilder(
                   stream: messageListStream(widget.chatId),
                   builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      List messages = snapshot.data.documents;
-                      viewModel.setReadCount(
-                          widget.chatId, user, messages.length);
+                    if (snapshot.hasData ?? []) {
+                      List messages = snapshot.data.docs;
+                      // viewModel.setReadCount(
+                      //    widget.chatId, user, messages.length);
                       return ListView.builder(
                         controller: scrollController,
                         padding: EdgeInsets.symmetric(horizontal: 10.0),

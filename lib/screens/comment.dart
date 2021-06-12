@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:social_media_app/components/stream_comments_wrapper.dart';
-import 'package:social_media_app/models/comments.dart';
-import 'package:social_media_app/models/post.dart';
-import 'package:social_media_app/models/user.dart';
-import 'package:social_media_app/utils/firebase.dart';
-import 'package:social_media_app/widgets/cached_image.dart';
+import 'package:sharekitterbeta/components/stream_comments_wrapper.dart';
+import 'package:sharekitterbeta/models/comments.dart';
+import 'package:sharekitterbeta/models/post.dart';
+import 'package:sharekitterbeta/models/user.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
+import 'package:sharekitterbeta/widgets/cached_image.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class Comments extends StatefulWidget {
@@ -163,7 +163,7 @@ class _CommentsState extends State<Comments> {
                       SizedBox(width: 3.0),
                       StreamBuilder(
                         stream: likesRef
-                            .where('postId', isEqualTo: widget.post.postId)
+                            .where('postId', isEqualTo: firebaseAuth.currentUser.uid)
                             .snapshots(),
                         builder:
                             (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -185,38 +185,7 @@ class _CommentsState extends State<Comments> {
             ],
           ),
         ),
-        // ListTile(
-        //     contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
-        //     title: Text(
-        //       widget.post.description,
-        //       style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.0),
-        //     ),
-        //     subtitle: Padding(
-        //       padding: const EdgeInsets.only(top: 8.0),
-        //       child: Row(
-        //         children: [
-        //           Text(
-        //             timeago.format(widget.post.timestamp.toDate()),style:TextStyle(),
-        //           ),
-        //           SizedBox(width: 3.0),
-        //           StreamBuilder(
-        //             stream: likesRef
-        //                 .where('postId', isEqualTo: widget.post.postId)
-        //                 .snapshots(),
-        //             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        //               if (snapshot.hasData) {
-        //                 QuerySnapshot snap = snapshot.data;
-        //                 List<DocumentSnapshot> docs = snap.docs;
-        //                 return buildLikesCount(context, docs?.length ?? 0);
-        //               } else {
-        //                 return buildLikesCount(context, 0);
-        //               }
-        //             },
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //     trailing: buildLikeButton()),
+      
       ],
     );
   }

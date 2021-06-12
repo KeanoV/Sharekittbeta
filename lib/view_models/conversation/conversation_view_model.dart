@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:social_media_app/models/message.dart';
-import 'package:social_media_app/services/chat_service.dart';
+import 'package:sharekitterbeta/models/message.dart';
+import 'package:sharekitterbeta/services/chat_service.dart';
 
 class ConversationViewModel extends ChangeNotifier {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -30,13 +30,13 @@ class ConversationViewModel extends ChangeNotifier {
     return newChatId;
   }
 
-  setReadCount(String chatId, var user, int count) {
-    chatService.setUserRead(chatId, user, count);
-  }
+ // setReadCount(String chatId, var user, int count) {
+ //   chatService.setUserRead(chatId, user, count);
+ // }
 
-  setUserTyping(String chatId, var user, bool typing) {
-    chatService.setUserTyping(chatId, user, typing);
-  }
+ // setUserTyping(String chatId, var user, bool typing) {
+//chatService.setUserTyping(chatId, user, typing);
+ // }
 
   pickImage({int source, BuildContext context, String chatId}) async {
     File image = source == 0

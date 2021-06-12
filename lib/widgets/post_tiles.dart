@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:social_media_app/models/post.dart';
-import 'package:social_media_app/screens/view_image.dart';
-import 'package:social_media_app/widgets/cached_image.dart';
+import 'package:sharekitterbeta/models/post.dart';
+import 'package:sharekitterbeta/screens/view_image.dart';
+import 'package:sharekitterbeta/widgets/cached_image.dart';
 
 class PostTile extends StatefulWidget {
   final PostModel post;

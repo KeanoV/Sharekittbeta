@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:social_media_app/utils/firebase.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
 
 class AuthService {
   User getCurrentUser() {
     User user = firebaseAuth.currentUser;
+    
     return user;
   }
 
@@ -56,6 +57,9 @@ class AuthService {
     await firebaseAuth.sendPasswordResetEmail(email: email);
   }
 
+getData() async {
+    return await Firestore.instance.collection("blogs").snapshots();
+  }
   logOut() async {
     await firebaseAuth.signOut();
   }

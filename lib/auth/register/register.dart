@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/auth/login/login.dart';
-import 'package:social_media_app/components/password_text_field.dart';
-import 'package:social_media_app/components/text_form_builder.dart';
-import 'package:social_media_app/utils/validation.dart';
-import 'package:social_media_app/view_models/auth/register_view_model.dart';
-import 'package:social_media_app/widgets/indicators.dart';
+import 'package:sharekitterbeta/auth/login/login.dart';
+import 'package:sharekitterbeta/components/password_text_field.dart';
+import 'package:sharekitterbeta/components/text_form_builder.dart';
+import 'package:sharekitterbeta/utils/validation.dart';
+import 'package:sharekitterbeta/view_models/auth/register_view_model.dart';
+import 'package:sharekitterbeta/widgets/indicators.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -27,9 +27,9 @@ class _RegisterState extends State<Register> {
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
           children: [
-            SizedBox(height:10.0),
+            SizedBox(height: 30.0),
             Text(
-              'Welcome to Wooble Social App..\nCreate a new account and connect with friends',
+              'Welcome to Sharekitt App..',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,

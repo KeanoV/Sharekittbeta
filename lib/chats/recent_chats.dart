@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/components/chat_item.dart';
-import 'package:social_media_app/models/message.dart';
-import 'package:social_media_app/utils/firebase.dart';
-import 'package:social_media_app/view_models/user/user_view_model.dart';
-import 'package:social_media_app/widgets/indicators.dart';
+import 'package:sharekitterbeta/components/chat_item.dart';
+import 'package:sharekitterbeta/models/message.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
+import 'package:sharekitterbeta/view_models/user/user_view_model.dart';
+import 'package:sharekitterbeta/widgets/indicators.dart';
 
 class Chats extends StatelessWidget {
   @override
@@ -32,7 +32,7 @@ class Chats extends StatelessWidget {
           stream: userChatsStream('${viewModel.user?.uid ?? ""}'),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              List chatList = snapshot.data.documents;
+              List chatList = snapshot.data.docs;
               if (chatList.isNotEmpty) {
                 return ListView.separated(
                   itemCount: chatList.length,
@@ -42,7 +42,7 @@ class Chats extends StatelessWidget {
                       stream: messageListStream(chatListSnapshot.id),
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
-                          List messages = snapshot.data.documents;
+                          List messages = snapshot.data.docs;
                           Message message =
                               Message.fromJson(messages.first.data());
                           List users = chatListSnapshot.data()['users'];

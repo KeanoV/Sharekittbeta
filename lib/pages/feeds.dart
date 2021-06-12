@@ -2,15 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:social_media_app/chats/recent_chats.dart';
-import 'package:social_media_app/components/stream_builder_wrapper.dart';
-import 'package:social_media_app/models/post.dart';
-import 'package:social_media_app/utils/firebase.dart';
-import 'package:social_media_app/widgets/userpost.dart';
+import 'package:sharekitterbeta/chats/recent_chats.dart';
+import 'package:sharekitterbeta/components/stream_builder_wrapper.dart';
+import 'package:sharekitterbeta/models/post.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
+import 'package:sharekitterbeta/widgets/userpost.dart';
+
+import 'notification.dart';
 
 class Timeline extends StatelessWidget {
-  
- final  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class Timeline extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          'Wooble',
+          'Sharekitt Feeds',
           style: TextStyle(fontWeight: FontWeight.w900),
         ),
         centerTitle: false,
@@ -32,7 +33,15 @@ class Timeline extends StatelessWidget {
                   context, CupertinoPageRoute(builder: (_) => Chats()));
             },
           ),
-          SizedBox(width: 20.0),
+          SizedBox(width: 10.0),
+          IconButton(
+            icon: Icon(CupertinoIcons.bell,
+                size: 30.0, color: Theme.of(context).accentColor),
+            onPressed: () {
+              Navigator.push(
+                  context, CupertinoPageRoute(builder: (_) => Activities()));
+            },
+          ),
         ],
       ),
       body: ListView(

@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:social_media_app/models/user.dart';
-import 'package:social_media_app/screens/view_image.dart';
-import 'package:social_media_app/services/services.dart';
-import 'package:social_media_app/utils/firebase.dart';
+import 'package:sharekitterbeta/models/user.dart';
+import 'package:sharekitterbeta/screens/view_image.dart';
+import 'package:sharekitterbeta/services/services.dart';
+import 'package:sharekitterbeta/utils/firebase.dart';
 import 'package:uuid/uuid.dart';
 
 class PostService extends Service {
@@ -19,10 +18,10 @@ class PostService extends Service {
     });
   }
 
-  uploadPost(File image, String location,
-      String description) async {
+  uploadPost(File image, String location, String description) async {
     String link = await uploadImage(posts, image);
-    DocumentSnapshot doc = await usersRef.doc(firebaseAuth.currentUser.uid).get();
+    DocumentSnapshot doc =
+        await usersRef.doc(firebaseAuth.currentUser.uid).get();
     user = UserModel.fromJson(doc.data());
     var ref = postRef.doc();
     ref.set({
@@ -32,7 +31,7 @@ class PostService extends Service {
       "ownerId": firebaseAuth.currentUser.uid,
       "mediaUrl": link,
       "description": description ?? "",
-      "location": location ?? "Wooble",
+      "location": location ?? "At Home",
       "timestamp": Timestamp.now(),
     }).catchError((e) {
       print(e);
@@ -87,4 +86,5 @@ class PostService extends Service {
       "timestamp": Timestamp.now(),
     });
   }
+
 }

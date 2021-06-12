@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:social_media_app/components/life_cycle_event_handler.dart';
-import 'package:social_media_app/landing/landing_page.dart';
-import 'package:social_media_app/screens/mainscreen.dart';
-import 'package:social_media_app/services/user_service.dart';
-import 'package:social_media_app/utils/config.dart';
-import 'package:social_media_app/utils/constants.dart';
-import 'package:social_media_app/utils/providers.dart';
+import 'package:sharekitterbeta/landing/landing_page.dart';
+import 'package:sharekitterbeta/screens/mainscreen.dart';
+import 'package:sharekitterbeta/services/user_service.dart';
+import 'package:sharekitterbeta/utils/config.dart';
+import 'package:sharekitterbeta/utils/providers.dart';
+import 'components/life_cycle_event_handler.dart';
+import 'utils/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             title: Constants.appName,
             debugShowCheckedModeBanner: false,
-            theme:notifier.dark ? Constants.darkTheme : Constants.lightTheme,
+            theme: notifier.dark ? Constants.darkTheme : Constants.lightTheme,
             home: StreamBuilder(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
